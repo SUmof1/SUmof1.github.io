@@ -116,6 +116,35 @@
 
   document.getElementById('lblGreetings').innerHTML =
       '<b>' + greet + '</b> normie';
-</script>  
+</script>
+<div class="fixed fixed--bottom cookie-disclaimer js-cookie-disclaimer">
+
+    <div class="media media--center">
+
+        <div class="media-object media-object--right">
+            <button class="button">its cool</button>
+        </div>     
+
+        <div class="media-body">
+            <p>um ye, ya boi using some cookies. im required by law to let you know about this, the cookies will remain in place, <a href="policy.html">read the policy</a>.</p>
+        </div>
+
+    </div>
+
+</div>
+<script>
+var $$cookieDisclaimer = document.querySelector('.js-cookie-disclaimer');
+
+if (!localStorage.getItem('cookieDisclaimer')) {
+  $$cookieDisclaimer.classList.add('is-active');
+}
+
+$$cookieDisclaimer.querySelector('button').addEventListener('click', function() {
+  localStorage.setItem('cookieDisclaimer', true);
+  $$cookieDisclaimer.classList.remove('is-active');
+});
+
+</script>
+  
 </body>
 </html>
