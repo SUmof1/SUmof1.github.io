@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>yup</title>
+    <link rel="stylesheet" href="./css/glitch.css">
+    <link rel="stylesheet" href="./css/star.css">
+
+</head>
+<script>
+    function randInt(min,max)
+{
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+function randomPoints()
+{
+	var top = randInt(0, 799),
+      bottom = randInt(top, 800);
+
+	return '0,' + top + ' 800,' + top + ' 800,' + bottom + ' 0,' + bottom;
+}
+
+setInterval(function()
+  {
+    document.querySelectorAll('.glitch').forEach(function(glitch)
+      {
+        glitch.setAttribute('points', randomPoints());
+      }
+    );
+  }, 50);
+</script>
+<body>
+  <div class="glitch">
+	    <span class="gc gc-red">retro boys</span>
+	    <span class="gc gc-blue">retro boys</span>
+	    <span class="gc gc-green">retro boys</span>
+	    <span class="glitch__main">retro boys</span>
+      <span class="gl gl-first"></span>
+      <span class="gl gl-second"></span>
+    </div>
+    <svg version="1.1" x="0px" y="px" viewBox="0 0 800 800">
+            <defs>
+                <clipPath id="glitch-1"><polygon class="glitch" points="0,0 800,0 800,800 0,800" /></clipPath>
+                <clipPath id="glitch-2"><polygon class="glitch" points="0,0 800,0 800,800 0,800" /></clipPath>
+                <clipPath id="glitch-3"><polygon class="glitch" points="0,0 800,0 800,800 0,800" /></clipPath>
+                <clipPath id="glitch-4"><polygon class="glitch" points="0,0 800,0 800,800 0,800" /></clipPath>
+                <clipPath id="glitch-5"><polygon class="glitch" points="0,0 800,0 800,800 0,800" /></clipPath>
+                <clipPath id="glitch-6"><polygon class="glitch" points="0,0 800,0 800,800 0,800" /></clipPath>
+                <clipPath id="glitch-7"><polygon class="glitch" points="0,0 800,0 800,800 0,800" /></clipPath>
+                <clipPath id="glitch-8"><polygon class="glitch" points="0,0 800,0 800,800 0,800" /></clipPath>
+                <clipPath id="glitch-9"><polygon class="glitch" points="0,0 800,0 800,800 0,800" /></clipPath>
+                <clipPath id="glitch-10"><polygon class="glitch" points="0,0 800,0 800,800 0,800" /></clipPath>
+            <path id="star" d="M442.875,606.5H505l-106.625-99.875h61.75 L400,447.667L250.391,561.348l57.413-184.871L160.5,263h182.546L400,79.609c0,0,56.954,183.391,56.954,183.391H639.5 L492.195,376.477L584.333,541h-51.146l80.479,99.917H571.75l65.558,72.061L442.875,606.5z"></path>
+            <path id="left" d="M637.308,712.977L442.875,606.5H505 l-106.625-99.875h61.75L400,447.667L250.391,561.348l57.413-184.871L160.5,263h182.546L400,79.609"></path>
+            <path id="right" d="M400,79.609L456.954,263H639.5L492.195,376.477 L584.333,541h-51.146l80.479,99.917H571.75l65.558,72.061"></path>
+            </defs>
+          
+            <use class="glitch-1" xlink:href="#star" stroke="rgba(0,0,255,1)" stroke-width="10" fill="none" clip-path="url(#glitch-1)"></use>
+          <use class="glitch-2" xlink:href="#star" stroke="rgba(0,255,0,1)" stroke-width="10" fill="none" clip-path="url(#glitch-2)"></use>
+            <use class="glitch-3" xlink:href="#star" fill="#f00" clip-path="url(#glitch-3)"></use>
+          
+            <use class="glitch-4 left" xlink:href="#left" stroke="#f00" fill="none" clip-path="url(#glitch-4)"></use>
+            <use class="glitch-2 right" xlink:href="#right" stroke="#f00" fill="none" clip-path="url(#glitch-5)"></use>
+          
+            <use class="glitch-4" xlink:href="#star" fill="#f00" clip-path="url(#glitch-6)"></use>
+        
+            <use class="left" xlink:href="#left" stroke="#f00" fill="none" clip-path="url(#glitch-7)"></use>
+            <use class="right" xlink:href="#right" stroke="#f00" fill="none" clip-path="url(#glitch-8)"></use>
+          
+            <use xlink:href="#star" fill="rgba(255,255,255,1)"></use>
+        
+            <use class="left" xlink:href="#left" stroke="#f00" fill="none"></use>
+            <use class="right" xlink:href="#right" stroke="#f00" fill="none"></use>
+        </svg>
+        
+</body>
+</html>

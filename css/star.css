@@ -1,0 +1,124 @@
+body {
+	background-color: #000;
+	color: #fff;
+	width: 100%;
+	width: 100vw;
+	height: 100%;
+	height: 100vh;
+	margin: 0;
+	overflow: hidden;
+}
+
+svg {
+	position: fixed;
+	top: 0%;
+	left: 0%;
+	width: 100%;
+	height: 45%;
+	margin: 0;
+	padding: 0;
+	z-index: 1;
+	display: block;
+}
+
+svg * {
+	stroke-linecap: round;
+	stroke-linejoin: miter;
+	stroke-miterlimit: 10;
+	-webkit-transition: fill .3s ease-in-out, opacity .3s ease-in-out;
+	transition: fill .3s ease-in-out, opacity .3s ease-in-out;
+}
+
+.glitch-1 {
+	opacity: .5;
+	transform: translate(-25px,-25px);
+}
+
+.glitch-2 {
+	opacity: .5;
+	transform: translate(25px,25px);
+}
+
+.glitch-3 {
+	opacity: .5;
+	transform: translate(25px,-25px);
+}
+
+.glitch-4 {
+	opacity: .5;
+	transform: translate(-25px,25px);
+}
+
+.left {
+	stroke-dasharray: 500 1517.8603515625;
+	animation: l-dash-anim 2s infinite linear forwards;
+}
+
+@-webkit-keyframes l-dash-anim {
+	from {
+		stroke-width: 0;
+		stroke-dashoffset: -1517.8603515625;
+	}
+	
+  50% {
+    stroke-width:20;
+  }
+	
+  to {
+		stroke-width: 0;
+		stroke-dashoffset: 500;
+	}
+}
+
+@keyframes l-dash-anim {
+	from {
+		stroke-width: 0;
+		stroke-dashoffset: -1517.8603515625;
+	}
+  
+	50% {
+    stroke-width: 20;
+  }
+  
+	to {
+		stroke-width: 0;
+		stroke-dashoffset: 500;
+	}
+}
+
+.right {
+	stroke-dasharray: 500 1067.8687744140625;
+	-webkit-animation: r-dash-anim 2s infinite linear forwards;
+	animation: r-dash-anim 2s infinite linear forwards;
+}
+
+@-webkit-keyframes r-dash-anim {
+	from{
+		stroke-width: 0;
+		stroke-dashoffset: 500;
+	}
+  
+	50%{
+    stroke-width: 20;
+  }
+	
+  to {
+		stroke-width: 0;
+		stroke-dashoffset: -1067.8687744140625;
+	}
+}
+@keyframes r-dash-anim {
+	from {
+		stroke-width: 0;
+		stroke-dashoffset: 500;
+	}
+  
+	50% {
+    stroke-width: 20;
+  }
+  
+	to {
+		stroke-width: 0;
+		stroke-dashoffset: -1067.8687744140625;
+	}
+}
