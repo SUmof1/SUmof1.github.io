@@ -105,7 +105,7 @@
 
   if (hrs < 12)
       greet = 'Good Morning';
-  else if (hrs >= 1 && hrs <= 5)
+  else if (hrs >= 0 && hrs <= 5)
       greet = 'wtf why u up this late?';       
   else if (hrs >= 12 && hrs <= 17)
       greet = 'Good Afternoon';
@@ -115,7 +115,7 @@
       greet = 'Good Evening';    
 
   document.getElementById('lblGreetings').innerHTML =
-      '<b>' + greet + '</b> normie';
+      '<b>' + greet + '</b>  +';
 </script>
 <div class="fixed fixed--bottom cookie-disclaimer js-cookie-disclaimer">
 
