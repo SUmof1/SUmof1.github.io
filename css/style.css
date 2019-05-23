@@ -278,4 +278,7 @@ footer{
     opacity: 0;
   }
 }
-
+label{
+  text-align: center;
+  float: left;
+}
