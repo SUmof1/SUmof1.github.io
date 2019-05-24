@@ -103,10 +103,8 @@
 
   var greet;
 
-  if (hrs >= 0 && hrs <= 5)
-      greet = 'wtf why u up this late?';
-  else if (hrs >= 6 && hrs < 12)
-      greet = 'wtf why u up this late?';       
+  if (hrs < 12)
+      greet = 'Good Morning';     
   else if (hrs >= 12 && hrs <= 17)
       greet = 'Good Afternoon';
   else if (hrs >= 17 && hrs <= 24)
