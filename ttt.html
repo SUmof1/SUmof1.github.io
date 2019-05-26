@@ -8,83 +8,81 @@
   <title>Document</title>
 </head>
 <body>
-      <form>
-          <input type="button" value="↞ go back" onclick="history.back()">
-        </form>
-  <form id="tictactoe">
-    <input type="radio" name="cell-0" id="cell-0-x" />
-                <input type="radio" name="cell-0" id="cell-0-o" />
-                <input type="radio" name="cell-1" id="cell-1-x" />
-                <input type="radio" name="cell-1" id="cell-1-o" />
-                <input type="radio" name="cell-2" id="cell-2-x" />
-                <input type="radio" name="cell-2" id="cell-2-o" />
-                <input type="radio" name="cell-3" id="cell-3-x" />
-                <input type="radio" name="cell-3" id="cell-3-o" />
-                <input type="radio" name="cell-4" id="cell-4-x" />
-                <input type="radio" name="cell-4" id="cell-4-o" />
-                <input type="radio" name="cell-5" id="cell-5-x" />
-                <input type="radio" name="cell-5" id="cell-5-o" />
-                <input type="radio" name="cell-6" id="cell-6-x" />
-                <input type="radio" name="cell-6" id="cell-6-o" />
-                <input type="radio" name="cell-7" id="cell-7-x" />
-                <input type="radio" name="cell-7" id="cell-7-o" />
-                <input type="radio" name="cell-8" id="cell-8-x" />
-                <input type="radio" name="cell-8" id="cell-8-o" />
-              
-                <div id="board" class="center">
-                  <div class="tile" id="tile-0">
-                    <label for="cell-0-x"></label>
-                    <label for="cell-0-o"></label>
-                    <div></div>
-                  </div>
-                  <div class="tile" id="tile-1">
-                    <label for="cell-1-x"></label>
-                    <label for="cell-1-o"></label>
-                    <div></div>
-                  </div>
-                  <div class="tile" id="tile-2">
-                    <label for="cell-2-x"></label>
-                    <label for="cell-2-o"></label>
-                    <div></div>
-                  </div>
-                  <div class="tile" id="tile-3">
-                    <label for="cell-3-x"></label>
-                    <label for="cell-3-o"></label>
-                    <div></div>
-                  </div>
-                  <div class="tile" id="tile-4">
-                    <label for="cell-4-x"></label>
-                    <label for="cell-4-o"></label>
-                    <div></div>
-                  </div>
-                  <div class="tile" id="tile-5">
-                    <label for="cell-5-x"></label>
-                    <label for="cell-5-o"></label>
-                    <div></div>
-                  </div>
-                  <div class="tile" id="tile-6">
-                    <label for="cell-6-x"></label>
-                    <label for="cell-6-o"></label>
-                    <div></div>
-                  </div>
-                  <div class="tile" id="tile-7">
-                    <label for="cell-7-x"></label>
-                    <label for="cell-7-o"></label>
-                    <div></div>
-                  </div>
-                  <div class="tile" id="tile-8">
-                    <label for="cell-8-x"></label>
-                    <label for="cell-8-o"></label>
-                    <div></div>
-                  </div>
-                </div>
-                <div id="end">
-                  <div id="message" class="center">
-                    <div>
-                      <input type="reset" for="tictactoe" value="Play again" />
-                    </div>
-                  </div>
-                </div>
-              </form>
-</body>
+   <!-- <div class="back-btn">
+<a href="p3.html">↞ go back</a>
+       </div> --> 
+        <div class="container">
+            <div class="card" data-index="1"></div>
+            <div class="card" data-index="2"></div>
+            <div class="card" data-index="3"></div>
+            <div class="card" data-index="4"></div>
+            <div class="card" data-index="5"></div>
+            <div class="card" data-index="6"></div>
+            <div class="card" data-index="7"></div>
+            <div class="card" data-index="8"></div>
+            <div class="card" data-index="9"></div>
+          </div>
+       </body>
+       <script>
+         const cards = document.querySelectorAll(".card");
+const winner = [[1,2,3],[4,5,6],[7,8,9],[1,5,9],[3,5,7],[1,4,7],[2,5,8],[3,6,9]];
+let firstPlayer = [], secondPlayer = [], count = 0;
+/*******************************************************/
+function check(array){
+  let finalResult = false;
+  for(let item of winner){
+    let res = item.every(val => array.indexOf(val) !== -1);
+    if(res){
+      finalResult = true;
+      break;
+    }
+  }
+  return finalResult;
+}
+/*******************************************************/
+function winnerpleyr(p){
+  const modal = document.createElement("div");
+  const player = document.createTextNode(p);
+  const replay = document.createElement("button");
+  modal.classList.add("winner");
+  modal.appendChild(player);
+  replay.appendChild(document.createTextNode("play again"));
+  replay.setAttribute("onclick","rep()");
+  modal.appendChild(replay);
+  document.body.appendChild(modal);
+}
+/*******************************************************/
+function draw(){
+  if(this.classList == "card"){
+    count++;
+    if(count%2 !== 0){
+      this.classList.add("x");
+      firstPlayer.push(Number(this.dataset.index));
+      if(check(firstPlayer)){        
+        winnerpleyr("x wins");
+      }
+    } else{
+      this.classList.add("o");
+      secondPlayer.push(Number(this.dataset.index));
+      if(check(secondPlayer)){
+        winnerpleyr("o wins");
+      }
+    }
+    if(count === 9){
+      winnerpleyr("tie game");
+    }
+  }
+}
+/*******************************************************/
+function rep(){
+  const w = document.querySelector(".winner");
+  cards.forEach(card => card.classList = "card");
+  firstPlayer = [];
+  secondPlayer = [];
+  count = 0;
+  w.remove();
+}
+/*******************************************************/
+cards.forEach(card => card.addEventListener("click", draw));
+       </script>
 </html>
