@@ -9,7 +9,6 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'UA-141194394-1');
 </script>
     <!--
@@ -110,9 +109,7 @@
 <script>
   var myDate = new Date();
   var hrs = myDate.getHours();
-
   var greet;
-
   if (hrs < 5)
       greet = 'wtf y u up this late?';
   else if (hrs >= 5 && hrs < 12)
@@ -121,7 +118,6 @@
       greet = 'good afternoon misseur';
   else if (hrs >= 17 && hrs <= 24)
       greet = 'good evening';    
-
   document.getElementById('lblGreetings').innerHTML =
       '<b>' + greet + '</b>  +';
 </script>
@@ -143,16 +139,13 @@
 </div>
 <script>
 var $$cookieDisclaimer = document.querySelector('.js-cookie-disclaimer');
-
 if (!localStorage.getItem('cookieDisclaimer')) {
   $$cookieDisclaimer.classList.add('is-active');
 }
-
 $$cookieDisclaimer.querySelector('button').addEventListener('click', function() {
   localStorage.setItem('cookieDisclaimer', true);
   $$cookieDisclaimer.classList.remove('is-active');
 });
-
 </script>
 
   

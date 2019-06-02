@@ -9,7 +9,6 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'UA-141194394-1');
 </script>
 	<meta charset="UTF-8">
@@ -23,15 +22,12 @@
 {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
-
 function randomPoints()
 {
 	var top = randInt(0, 799),
       bottom = randInt(top, 800);
-
 	return '0,' + top + ' 800,' + top + ' 800,' + bottom + ' 0,' + bottom;
 }
-
 setInterval(function()
   {
     document.querySelectorAll('.glitch').forEach(function(glitch)
