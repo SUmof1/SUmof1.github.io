@@ -209,6 +209,10 @@ article#main-col{
   float:left;
   width:65%;
 }
+article#main-col2{
+  float:center;
+  width:100%;
+}
 
 /* cell */
 ul#cell li{
@@ -405,4 +409,11 @@ a {
   text-align: left;
   margin-top: 100px;
   font-size: 70px;
+}
+.chooser {
+  align-content: center;
+  position: relative;
+  text-align: center;
+  margin-top: 100px;
+  font-size: 50px;
 }
